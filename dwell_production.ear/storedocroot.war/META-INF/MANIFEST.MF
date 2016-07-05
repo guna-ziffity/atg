@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+ATG-Module-Uri: storedocroot.war
+ATG-Context-Root: crsdocroot
+ATG-Module-Version: storedocroot.war
+

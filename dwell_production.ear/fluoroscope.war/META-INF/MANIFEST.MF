@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+ATG-Module-Uri: fluoroscope.war
+ATG-Context-Root: inspect
+ATG-Module-Version: fluoroscope.war
+
