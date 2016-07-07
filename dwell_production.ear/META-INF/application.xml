@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <application version="1.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/application_1_4.xsd" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <description>ATGApp: built from ATG assembly tool, built from dynamo modules: DafEar, dwell_store, DCS.PublishingAgent, DafEar.Admin, DCS.AbandonedOrderServices. Created on: Fri Jul 01 14:47:51 IST 2016</description>
+    <description>ATGApp: built from ATG assembly tool, built from dynamo modules: DafEar, dwell_store, DCS.PublishingAgent, DafEar.Admin, DCS.AbandonedOrderServices. Created on: Wed Jul 06 14:57:52 IST 2016</description>
     <display-name>ATGApp</display-name>
     <module>
         <web>

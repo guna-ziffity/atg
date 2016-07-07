@@ -18,8 +18,6 @@
       is set in the "AssemblerPipelineServlet" Nucleus component.
 --%>
 <dsp:page>
-<crs:pageContainer>
-    <jsp:body>
 <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" title="no title" charset="utf-8" />
 <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="no title" charset="utf-8" />
 <body class=" cms-index-index cms-home">
@@ -43,7 +41,5 @@
 
 </div>
 </body>
-</jsp:body>
-  </crs:pageContainer>
 </dsp:page>
 <%-- @version $Id: //hosting-blueprint/B2CBlueprint/version/11.2/Storefront/j2ee/store.war/cartridges/OneColumnPage/OneColumnPage.jsp#2 $$Change: 953229 $--%>

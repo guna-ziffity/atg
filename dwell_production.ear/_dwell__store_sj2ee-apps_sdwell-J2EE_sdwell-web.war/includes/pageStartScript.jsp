@@ -10,6 +10,7 @@
 --%>
 
 <dsp:page>
+  <dsp:getvalueof var="storeConfig" bean="/atg/store/StoreConfiguration"/>
   <fmt:message key="common.button.pleaseWaitText" var="pleaseWaitMessage"/>
   <c:set var="javascriptRoot" value="${pageContext.request.contextPath}/javascript"/>
 
@@ -30,8 +31,8 @@
       isDebug: ${storeConfig.dojoDebug}
     };
   </script> 
-  <script type="text/javascript" src="/dwellstore/dojo-1-6-2/dojo/dojo.js.uncompressed.js"></script>
-  <script type="text/javascript" src="/dwellstore/dojo-1-6-2/RangeSlider-fixes.js"></script>
+  <script type="text/javascript" src="/dojo-1-6-2/dojo/dojo.js.uncompressed.js"></script>
+  <script type="text/javascript" src="/dojo-1-6-2/RangeSlider-fixes.js"></script>
 
   <script type="text/javascript">     
       dojo.require("dojo.back");
@@ -75,7 +76,7 @@
       dojo.require("dojox.widget.Dialog");       
   </script>
 
-  <script type="text/javascript" src="/dwellstore/dojo-1-6-2/dojo-fixes.js"></script>
+  <script type="text/javascript" src="/dojo-1-6-2/dojo-fixes.js"></script>
   
   <%-- 
     Include all Javascript files that need to be loaded for the page. 

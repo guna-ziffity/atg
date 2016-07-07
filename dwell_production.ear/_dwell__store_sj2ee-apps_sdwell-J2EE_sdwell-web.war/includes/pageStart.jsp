@@ -25,6 +25,7 @@
 <%@page trimDirectiveWhitespaces="true"%>
 
 <dsp:page>
+  <dsp:importbean bean="/atg/multisite/Site" var="currentSite"/>
   <dsp:importbean bean="/atg/endeca/assembler/cartridge/StoreCartridgeTools" var="StoreCartridgeTools"/>
   <dsp:importbean bean="/atg/commerce/catalog/CategoryLookup"/>
   <dsp:importbean bean="/atg/store/StoreConfiguration" var="storeConfiguration"/>
@@ -154,7 +155,7 @@
             </c:when>
             <c:otherwise>
              <%-- Use default SEO tag renderer --%>          
-             
+             <dsp:include page="/global/gadgets/metaDetails.jsp"/>
             </c:otherwise>
           </c:choose>          
             
@@ -162,7 +163,11 @@
       </c:choose>
 
       <%-- Renders canonical links --%>
-     
+      <dsp:include page="/global/gadgets/documentLinks.jsp">
+        <dsp:param name="categoryId" param="categoryId"/>
+        <dsp:param name="productId" param="productId"/>
+        <dsp:param name="rootContentItem" value="${rootContentItem}"/>
+      </dsp:include>
     
       <dsp:getvalueof var="faviconUrl" vartype="java.lang.String" value="${currentSite.favicon}"/>
       <link rel="icon" type="image/png" href="${faviconUrl}"/>

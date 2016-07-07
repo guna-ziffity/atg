@@ -97,7 +97,7 @@ GoTo this URL if user pushes RECALCULATE button and there are errors:
 &nbsp; &nbsp;   
 
 <dsp:input bean="CartModifierFormHandler.moveToPurchaseInfoSuccessURL"
-   type="hidden" value="../checkout/shipping.jsp"/> <%-- move on to shipping --%>
+   type="hidden" value="../checkout/expresscheckout.jsp"/> <%-- move on to shipping --%>
 </tr>
 </dsp:oparam>
 <dsp:oparam name="empty">

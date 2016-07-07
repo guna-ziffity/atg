@@ -11,6 +11,50 @@
 <dsp:importbean bean="/DwellDroplet/DefaultSkuDroplet"/>
 <dsp:importbean bean="/atg/commerce/order/purchase/CartModifierFormHandler" />
 <dsp:include page="/includes/header.jsp" />
+<dsp:getvalueof var="product" param="product_id"/>
+ <script type="text/javascript">
+var request;  
+function priceDisplay()  
+{  
+var v=document.vinform.stage1.value;  
+var p="${product}";
+var url="multiSkuPriceDisplay.jsp?val="+v+"&prod="+p;  
+  
+if(window.XMLHttpRequest)
+{  
+request=new XMLHttpRequest();  
+}  
+else if(window.ActiveXObject)
+{  
+request=new ActiveXObject("Microsoft.XMLHTTP");  
+}  
+  
+try  
+{  
+request.onreadystatechange=getInfo;  
+request.open("GET",url,true);  
+request.send();  
+}  
+catch(e)  
+{  
+alert("Unable to connect to server");  
+}  
+}  
+window.onload = function() 
+{
+document.getElementsByName('stage1')[0].onchange();
+}
+function getInfo()
+{  
+if(request.readyState==4)
+{  
+var val=request.responseText;  
+document.getElementById('selboxId').innerHTML=val; 
+document.getElementById('image').src=val;
+
+} 
+} 
+</script>
 <dsp:droplet name="InvokeAssembler">
     <dsp:param name="contentCollection" value="/content/Shared/Header"/>
     <dsp:oparam name="output">
@@ -35,7 +79,7 @@
 					<div class="product-img-box">
 						<div class="product-image">
 							<dsp:getvalueof var="images" param="product.LargeImage.url" />
-    						<img src="/dwellstore/${images}" />
+    						<img id="image" src="/dwellstore/${images}" />
     					</div>
     				</div>
     				<div class="product-shop">
@@ -54,15 +98,16 @@
       											</dsp:include>
     										</div>
     									</div>
-    									<dsp:form>
+    									<dsp:form name="vinform" method="post">
   											<dsp:getvalueof var="childSKU" param="product.childSKUs" />
   											<c:choose>
   												<c:when test="${fn:length(childSKU) gt 1}">
-  													<dsp:select bean="CartModifierFormHandler.catalogRefIds">
+  													<dsp:select bean="CartModifierFormHandler.catalogRefIds" onchange="priceDisplay()"   name="stage1" id="changeImage">
    														<c:forEach var="sku" items="${childSKU}">
    															<dsp:option value="${sku.repositoryId}"> ${sku.displayName}</dsp:option>
    														</c:forEach>
  													</dsp:select>
+ 													<span id="selboxId"> </span> 
  												</c:when>
  												<c:otherwise>
  													<dsp:input bean="CartModifierFormHandler.catalogRefIds" paramvalue="defaultSKU.id" type="hidden"/>
