@@ -18,7 +18,7 @@ function priceDisplay()
 {  
 var v=document.vinform.stage1.value;  
 var p="${product}";
-var url="multiSkuPriceDisplay.jsp?val="+v+"&prod="+p;  
+var url="configDetail.jsp?val="+v+"&prod="+p;  
   
 if(window.XMLHttpRequest)
 {  

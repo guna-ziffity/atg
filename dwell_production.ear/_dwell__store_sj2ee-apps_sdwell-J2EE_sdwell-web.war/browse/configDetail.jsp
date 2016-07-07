@@ -8,12 +8,9 @@
 <body>
    
 
-<% 
-String sku= request.getParameter("val");
-String product= request.getParameter("prod");
-pageContext.setAttribute("sku", sku);
-pageContext.setAttribute("product", product);
-%>
+
+<dsp:getvalueof var="sku" param="val"/>
+<dsp:getvalueof var="product" param="prod"/>
 <c:set var="sku" value="${sku}"/>
 <c:set var="product" value="${product}"/>
 <dsp:getvalueof var="sku" value="${sku}"/>
@@ -44,7 +41,7 @@ pageContext.setAttribute("product", product);
  
  <dsp:getvalueof var="images" param="skuId.largeImage.url" />
 
-    <img src="${images}" >
+    <img src="/dwellstore/${sku}" >
  </c:when>
  <c:otherwise>
  
